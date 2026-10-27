@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>ASTROVERSE</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #080b19;
+  --text: #f4f4ff;
+  --muted: #a8b1d1;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 22px 16px 32px;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 10% 0%, #263c75 0, transparent 38%),
+    radial-gradient(ellipse at 95% 35%, #451b68 0, transparent 35%),
+    var(--bg);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.app { max-width: 520px; margin: 0 auto; }
+.hero {
+  padding: 22px 18px;
+  margin-bottom: 22px;
+  border: 1px solid #6678c7;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #182b59, #32184f 70%, #15172f);
+  box-shadow: 0 0 28px #596aff20;
+}
+.eyebrow {
+  color: #9eeaff;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 800;
+}
+h1 { margin: 8px 0; font-size: 31px; letter-spacing: 1px; }
+.hero p { margin: 0; color: #d6dcff; line-height: 1.5; }
+.section-title {
+  margin: 22px 4px 12px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card {
+  min-height: 118px;
+  padding: 16px 14px;
+  text-align: left;
+  color: white;
+  border: 1px solid #ffffff20;
+  border-radius: 19px;
+  cursor: pointer;
+  font: inherit;
+  box-shadow: 0 8px 22px #0003;
+  transition: transform .15s ease, filter .15s ease;
+}
+.card:active { transform: scale(.97); filter: brightness(1.2); }
+.card .emoji { display: block; font-size: 29px; margin-bottom: 12px; }
+.card strong { display: block; font-size: 15px; }
+.card small { display: block; margin-top: 5px; color: #ffffffc7; line-height: 1.35; }
+.blue { background: linear-gradient(145deg,#1467a7,#16335d); }
+.purple { background: linear-gradient(145deg,#853cc1,#40205e); }
+.gold { background: linear-gradient(145deg,#b87513,#65401b); }
+.green { background: linear-gradient(145deg,#118c7d,#145348); }
+.pink { background: linear-gradient(145deg,#c13d87,#60254e); }
+.indigo { background: linear-gradient(145deg,#4657bd,#252e65); }
+.wide { grid-column: 1 / -1; min-height: 88px; }
+.footer {
+  margin-top: 24px;
+  padding: 15px;
+  text-align: center;
+  color: #a9b4d8;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.page {
+  display: none;
+  padding: 22px;
+  border: 1px solid #6678c7;
+  border-radius: 22px;
+  background: linear-gradient(145deg,#141d3b,#211535);
+}
+.page h2 { margin-top: 0; }
+.page p { line-height: 1.65; color: #d6dcf5; }
+.back {
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 13px;
+  background: #314a87;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="hero">
+    <div class="eyebrow">✦ ROLEPLAY UNIVERSE ✦</div>
+    <h1>⚡ ASTROVERSE</h1>
+    <p>Твой мир. Твоя история. Твоё сообщество. 🚀</p>
+  </header>
+
+  <section id="home">
+    <div class="section-title">✦ ИГРОВОЙ МИР</div>
+    <div class="grid">
+      <button class="card blue" onclick="openPage('profile')">
+        <span class="emoji">👤</span>
+        <strong>Профиль</strong><small>Ник • ID • Описание</small>
+      </button>
+      <button class="card purple" onclick="openPage('family')">
+        <span class="emoji">👑</span>
+        <strong>Семьи</strong><small>Кланы • Отношения</small>
+      </button>
+      <button class="card gold" onclick="openPage('giveaways')">
+        <span class="emoji">🎁</span>
+        <strong>Розыгрыши</strong><small>События • Призы</small>
+      </button>
+      <button class="card green" onclick="openPage('media')">
+        <span class="emoji">📸</span>
+        <strong>Медиаархив</strong><small>Моменты сообщества</small>
+      </button>
+      <button class="card indigo" onclick="openPage('rules')">
+        <span class="emoji">📜</span>
+        <strong>Правила</strong><small>Порядок в чате</small>
+      </button>
+      <button class="card pink" onclick="openPage('news')">
+        <span class="emoji">📢</span>
+        <strong>Объявления</strong><small>Новости сообщества</small>
+      </button>
+      <button class="card blue" onclick="openPage('contact')">
+        <span class="emoji">🛠️</span>
+        <strong>Разработчик</strong><small>Вопросы • Идеи</small>
+      </button>
+      <button class="card purple" onclick="openPage('ads')">
+        <span class="emoji">📣</span>
+        <strong>Реклама</strong><small>Продвижение проекта</small>
+      </button>
+      <button class="card gold wide" onclick="openPage('support')">
+        <span class="emoji">⭐</span>
+        <strong>Поддержать AstroBot</strong>
+        <small>Помочь развитию проекта</small>
+      </button>
+    </div>
+  </section>
+
+  <section class="page" id="page">
+    <h2 id="page-title"></h2>
+    <p id="page-text"></p>
+    <button class="back" onclick="goHome()">← Главное меню</button>
+  </section>
+
+  <footer class="footer">
+    ✦ ASTROBOT • ASTROVERSE ✦<br>
+    Игровое пространство для RP-сообществ
+  </footer>
+</main>
+
+<script>
+const pages = {
+  profile: ["👤 Профиль игрока", "Здесь будет игровая карточка участника: ник, ID, описание и информация о семье. Функция пока разрабатывается."],
+  family: ["👑 Семьи и отношения", "Здесь появятся вступление в семью, информация о кланах и отношения между игроками. Функция пока разрабатывается."],
+  giveaways: ["🎁 Розыгрыши", "Здесь будут розыгрыши, кнопка участия и объявление победителей. Функция пока разрабатывается."],
+  media: ["📸 Медиаархив", "Здесь будет архив фотографий и видео сообщества. Сохранение пока не выполняется."],
+  rules: ["📜 Правила", "Здесь будут отображаться правила выбранного RP-сообщества."],
+  news: ["📢 Объявления", "Здесь будут важные новости и сообщения администрации."],
+  contact: ["🛠️ Связь с разработчиком", "Здесь появится отправка вопросов, идей и сообщений об ошибках."],
+  ads: ["📣 Реклама", "Здесь появятся условия размещения рекламы. Заказы пока не принимаются."],
+  support: ["⭐ Поддержать AstroBot", "Спасибо за поддержку проекта! Платёжная система пока не подключена."]
+};
+
+function openPage(key) {
+  const item = pages[key];
+  if (!item) return;
+  document.getElementById("home").style.display = "none";
+  document.getElementById("page").style.display = "block";
+  document.getElementById("page-title").textContent = item[0];
+  document.getElementById("page-text").textContent = item[1];
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+function goHome() {
+  document.getElementById("page").style.display = "none";
+  document.getElementById("home").style.display = "block";
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+</script>
+</body>
+</html>

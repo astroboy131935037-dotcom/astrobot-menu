@@ -1,5 +1,6 @@
 *
 !.gitignore
+!index.html
 !webapp/
 webapp/*
 !webapp/index.html
